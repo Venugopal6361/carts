@@ -22,7 +22,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-
+    - name: Build with MAVEN
+      run: mvn -B -DskipTests package --file pom.xml
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
@@ -30,7 +31,7 @@ jobs:
  
     #
     #
-    # Build
+      # Build
     - name: Build jar files
       run: ./scripts/build.sh
 
@@ -47,8 +48,8 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/master'
       with:
-        dockerfile: /home/runner/work/carts/carts/Dockerfile
-        path: target/
+       # dockerfile: /home/runner/work/carts/carts/Dockerfile
+        path: docker/carts/
         registry: docker.io
         image: venupj/sockshop
           #tag_with_ref:true
