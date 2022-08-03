@@ -36,10 +36,16 @@ jobs:
 
     #
     #
-    # Push to dockerhub
+   
     - name: Login to DockerHub
       run: |
           echo "${{ secrets.DOCKERHUB_PASS }}" | docker login -u "venupj" --password-stdin 
+          
+    - name: Push to DockerHub
+      uses: docker/build-push-action@v3
+      with:
+           push: true
+           tags: user/app:latest
     
 
 
