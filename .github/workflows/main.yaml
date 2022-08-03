@@ -39,7 +39,7 @@ jobs:
     # Push to dockerhub
     - name: Login to DockerHub
       run: |
-          echo "$(( secrets.DOCKERHUB_PASS))" | docker login -u "venupj" --password-stdin 
+          echo "${{ secrets.DOCKERHUB_PASS }}" | docker login -u "venupj" --password-stdin 
     
 
 
