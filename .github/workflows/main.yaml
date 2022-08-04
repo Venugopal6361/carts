@@ -39,7 +39,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/master'
       with:
         dockerfile: ./Dockerfile
-        path: docker/carts/Dockerfile
+        #path: docker/carts/Dockerfile
         registry: docker.io
         image: venupj/sockshop
           #tag_with_ref:true
