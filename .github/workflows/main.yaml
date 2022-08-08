@@ -5,12 +5,12 @@ on:
     branches:
     - "*"  # run for branches
     tags:
-    - "*"  # run for tags
+    - "carts"  # run for tags
   pull_request:
     branches:
     - "*"  # run for branches
     tags:
-    - "*"  # run for tags
+    - "carts"  # run for tags
 
 jobs:
   test:
